@@ -1,6 +1,8 @@
 import {Card} from 'react-bootstrap'
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import '../styles/ProductCard.css'
+import RatingStar from './RatingStar';
 
 const ProductCard = ({product}) => {
     //console.log("sbdjn", product.name)
@@ -11,12 +13,17 @@ const ProductCard = ({product}) => {
         </Link>
      
       <Card.Body>
-         <Link to={`/product/${product._id}`}>
-             <Card.Title as='div'>
+         <Link to={`/product/${product._id}`} className='card-title'>
+             <Card.Title as='div' >
               <strong> {product.name}</strong> 
              </Card.Title>
         </Link>
-        <Card.Text as='h4'>
+
+       <Card.Text as='div'>
+           <RatingStar rating={product.rating} reviews={product.numReviews} id={product._id}/>
+        </Card.Text>
+
+        <Card.Text as='h4' className='py-3'>
            $ {product.price}
         </Card.Text>
    
@@ -33,6 +40,8 @@ ProductCard.propTypes = {
     _id: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     image: PropTypes.string.isRequired,
+    rating: PropTypes.number.isRequired,
+    numReviews: PropTypes.number.isRequired,
     // Add more PropTypes for other properties if necessary
   }).isRequired
 };

@@ -5,8 +5,8 @@ import {LinkContainer} from 'react-router-bootstrap'
 const Header = () => {
   return (
     <header>
-        <Navbar expand="md" bg="dark" variant="dark" collapseOnSelect>
-      <Container>
+      <Navbar expand="md" bg="dark" variant="dark" collapseOnSelect>
+       <Container>
         <LinkContainer to={'/'}>
             <Navbar.Brand > 
             <FaShopify/> E-commmerce 

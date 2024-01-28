@@ -1,4 +1,5 @@
-import {Row,Col,Container} from 'react-bootstrap'
+import {Row,Col} from 'react-bootstrap'
+import {FaShopify} from "react-icons/fa";
 
 const Footer = () => {
 
@@ -6,13 +7,13 @@ const currentDate = new Date();
 const currentYear = currentDate.getFullYear();
   return (
     <footer>
-       <Container>
+       
             <Row>
-                <Col className='py-2 text-center bg-light'>
-                   Apoorv &copy; in {currentYear}
+                <Col className='py-2 text-center bg-dark text-white'>
+                   Apoorv Shrivastava <FaShopify/> Ecom App &copy; in {currentYear}
                 </Col>
             </Row>
-       </Container>
+       
     </footer>
   )
 }
